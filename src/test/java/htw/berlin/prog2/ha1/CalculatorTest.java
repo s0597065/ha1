@@ -108,5 +108,23 @@ class CalculatorTest {
         assertEquals(expected, actual);
 
     }
+
+    //Aufgabe 2a
+    @Test
+    @DisplayName("should calculate correct with negative numbers")
+    void testNegativeSubstraction() {
+        Calculator calc = new Calculator();
+
+        calc.pressNegativeKey();
+        calc.pressDigitKey(3);
+        calc.pressBinaryOperationKey("-");
+        calc.pressDigitKey(2);
+        calc.pressEqualsKey();
+        String expected = "-5";
+
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
 }
 
