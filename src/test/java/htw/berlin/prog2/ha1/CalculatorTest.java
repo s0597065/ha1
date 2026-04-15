@@ -126,5 +126,25 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+
+    //Aufgabe 2b
+    @Test
+    @DisplayName("clear only current entry after on first clear press")
+    void testFirstClear() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(5);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(2);
+        calc.pressClearKey();
+        calc.pressDigitKey(3);
+
+        String expected = "8";
+
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
 }
 
