@@ -129,7 +129,7 @@ class CalculatorTest {
 
     //Aufgabe 2b
     @Test
-    @DisplayName("clear only current entry after on first clear press")
+    @DisplayName("clear only current entry on first clear press")
     void testFirstClear() {
         Calculator calc = new Calculator();
 
@@ -138,6 +138,7 @@ class CalculatorTest {
         calc.pressDigitKey(2);
         calc.pressClearKey();
         calc.pressDigitKey(3);
+        calc.pressEqualsKey();
 
         String expected = "8";
 
