@@ -28,10 +28,26 @@ public class Calculator {
      * oder rechts an die zuvor gedrückte Ziffer angehängt angezeigt wird.
      * @param digit Die Ziffer, deren Taste gedrückt wurde
      */
+    //Aufgabe 3a
     public void pressDigitKey(int digit) {
         if(digit > 9 || digit < 0) throw new IllegalArgumentException();
 
-        if(screen.equals("0") || latestValue == Double.parseDouble(screen)) screen = "";
+
+        if(screen.equals("0"))
+        {
+            screen = "";
+        }
+
+        else if(screen.equals("-0"))
+        {
+            screen = "-" ;
+        }
+
+        else if(latestValue == Double.parseDouble(screen))
+        {
+            screen = "";
+        }
+
 
         screen = screen + digit;
     }
