@@ -90,5 +90,23 @@ class CalculatorTest {
 
 
     //TODO hier weitere Tests erstellen
+
+    //Aufgabe 1
+    @Test
+    @DisplayName("should display result after multiplying two numbers")
+    void testMultiply() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(3);
+        calc.pressBinaryOperationKey("x");
+        calc.pressDigitKey(7);
+        calc.pressEqualsKey();
+
+        String expected = "21";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+
+    }
 }
 
